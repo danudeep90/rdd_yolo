@@ -1,0 +1,13 @@
+# Excluding out all training images
+yolov5/datasets/train/Czech
+yolov5/datasets/train/India
+yolov5/datasets/train/Japan
+
+# Excluding virtual environment
+venv
+
+# Excluding other files
+.DS_Store
+
+# Excluding runs folder
+yolov5/runs
