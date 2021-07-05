@@ -9,7 +9,7 @@ venv
 
 # Excluding other files
 .DS_Store
-yolov5/.github
+yolov5/.github/
 
 # Excluding runs folder
 yolov5/runs
