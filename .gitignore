@@ -2,6 +2,7 @@
 yolov5/datasets/train/Czech
 yolov5/datasets/train/India
 yolov5/datasets/train/Japan
+yolov5/datasets/train.tar.gz
 
 # Excluding virtual environment
 venv
