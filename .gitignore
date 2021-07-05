@@ -14,3 +14,15 @@ yolov5/.github
 # Excluding runs folder
 yolov5/runs
 
+# Cache related folders
+__pycache__/
+
+# Neural Network weights #
+*.weights
+*.pt
+*.onnx
+*.mlmodel
+*.torchscript
+darknet53.conv.74
+yolov3-tiny.conv.15
+
