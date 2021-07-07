@@ -11,11 +11,14 @@ def main(train_ratio, valid_ratio, test_ratio, imgs_dir, countries):
     val_examples_count = 0
     test_examples_count = 0
 
+    # Directory where the text files would be written
+    other_dir = "/".join(imgs_dir.split("/")[0:-1])
+
     # Removing existing text files
     try:
-        os.remove(os.path.join(imgs_dir, "train.txt"))
-        os.remove(os.path.join(imgs_dir, "valid.txt"))
-        os.remove(os.path.join(imgs_dir, "test.txt"))
+        os.remove(os.path.join(other_dir, "train.txt"))
+        os.remove(os.path.join(other_dir, "valid.txt"))
+        os.remove(os.path.join(other_dir, "test.txt"))
     except:
         pass
 
@@ -59,15 +62,15 @@ def main(train_ratio, valid_ratio, test_ratio, imgs_dir, countries):
         req_test_files = list(np.array(img_files)[test_indices])
 
         # Writing to a file
-        with open(os.path.join(imgs_dir, "train.txt"), "a") as outfile:
+        with open(os.path.join(other_dir, "train.txt"), "a") as outfile:
             outfile.write("\n".join(req_train_files))
             outfile.write("\n")
 
-        with open(os.path.join(imgs_dir, "valid.txt"), "a") as outfile:
+        with open(os.path.join(other_dir, "valid.txt"), "a") as outfile:
             outfile.write("\n".join(req_val_files))
             outfile.write("\n")
 
-        with open(os.path.join(imgs_dir, "test.txt"), "a") as outfile:
+        with open(os.path.join(other_dir, "test.txt"), "a") as outfile:
             outfile.write("\n".join(req_test_files))
             outfile.write("\n")
 
