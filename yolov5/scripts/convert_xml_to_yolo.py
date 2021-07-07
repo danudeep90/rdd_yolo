@@ -142,10 +142,10 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Code to convert xml files to yolo format")
     parser.add_argument('--input_train_file', type=str,
                         help='Path of txt file which contains details of images for training',
-                        default="datasets/train/train.txt")
+                        default="datasets/train.txt")
     parser.add_argument('--input_valid_file', type=str,
                         help='Path of txt file which contains details of images for validation',
-                        default="datasets/train/valid.txt")
+                        default="datasets/valid.txt")
     parser.add_argument('--class_file', type=str,
                         help='Path of txt file which has classes information',
                         default="datasets/damage_classes.txt")
