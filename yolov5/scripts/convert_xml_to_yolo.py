@@ -33,7 +33,7 @@ def getYoloBoxInfo(imgFilePath, minX, minY, maxX, maxY):
     return bb
 
 
-def main(input_train_file, input_valid_file, class_file):
+def main(input_train_file, input_valid_file, input_test_file, class_file):
 
     # Testing
     # input_train_file = "datasets/train/train.txt"
@@ -52,8 +52,13 @@ def main(input_train_file, input_valid_file, class_file):
         lst_img_details_valid = f.readlines()
     f.close()
 
+    with open(input_test_file, "r") as f:
+        lst_img_details_test = f.readlines()
+    f.close()
+
+
     # Combining both the lists
-    lst_img_details = lst_img_details_train + lst_img_details_valid
+    lst_img_details = lst_img_details_train + lst_img_details_valid + lst_img_details_test
 
     # assign each class of dataset to a number
     outputCtoId = {}
@@ -146,6 +151,9 @@ if __name__ == "__main__":
     parser.add_argument('--input_valid_file', type=str,
                         help='Path of txt file which contains details of images for validation',
                         default="datasets/valid.txt")
+    parser.add_argument('--input_test_file', type=str,
+                    help='Path of txt file which contains details of images for test',
+                    default="datasets/test.txt")
     parser.add_argument('--class_file', type=str,
                         help='Path of txt file which has classes information',
                         default="datasets/damage_classes.txt")
@@ -154,7 +162,8 @@ if __name__ == "__main__":
 
     input_train_file = args.input_train_file
     input_valid_file = args.input_valid_file
+    input_test_file = args.input_test_file
     class_file = args.class_file
 
     # Function call
-    main(input_train_file, input_valid_file, class_file)
+    main(input_train_file, input_valid_file, input_test_file, class_file)
