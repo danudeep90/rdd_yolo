@@ -78,8 +78,10 @@ def export(weights='./yolov5s.pt',  # weights path
         try:
             print(f'\n{prefix} starting export with torch {torch.__version__}...')
             f = weights.replace('.pt', '.torchscript.pt')  # filename
+            f1 = weights.replace('.pt','.torchscript.ptl')
             ts = torch.jit.trace(model, img, strict=False)
             (optimize_for_mobile(ts) if optimize else ts).save(f)
+            (optimize_for_mobile(ts) if optimize else ts)._save_for_lite_interpreter(f1)
             print(f'{prefix} export success, saved as {f} ({file_size(f):.1f} MB)')
         except Exception as e:
             print(f'{prefix} export failure: {e}')
