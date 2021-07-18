@@ -65,9 +65,9 @@ model_export_script_status=$?
 echo
 
 # Print training and test results location
-echo "Latest training results are saved at $latest_train_dir" | tee -a $LOGFILEPATH
-echo "Latest weights are available at $latest_weights_path " | tee -a $LOGFILEPATH
-echo "Latest test results are saved at $latest_test_dir" | tee -a $LOGFILEPATH
+echo "Latest training results are saved at $PWD/$latest_train_dir" | tee -a $LOGFILEPATH
+echo "Latest weights are available at $PWD/$latest_weights_path " | tee -a $LOGFILEPATH
+echo "Latest test results are saved at $PWD/$latest_test_dir" | tee -a $LOGFILEPATH
 echo
 
 # Check if all codes are successfully executed and then write to bucket
