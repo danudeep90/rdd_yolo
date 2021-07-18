@@ -26,3 +26,13 @@ __pycache__/
 darknet53.conv.74
 yolov3-tiny.conv.15
 
+# Other meta info file
+yolov5/scripts/run_info_details.txt
+
+# Removing cache files
+yolov5/datasets/train.cache
+yolov5/datasets/valid.cache
+yolov5/datasets/test.cache
+
+# Removing logs folder
+yolov5/logs
