@@ -29,7 +29,7 @@ def main(train_ratio, valid_ratio, test_ratio, imgs_dir, countries):
 
         # Get list of files
         img_files = [os.path.join(tmp_path, filename)
-                     for filename in os.listdir(tmp_path) if filename.endswith('.jpg')]
+                     for filename in os.listdir(tmp_path) if filename.endswith('.jpg')][0:50]
 
         # Printing len of img_files
         print(len(img_files))
