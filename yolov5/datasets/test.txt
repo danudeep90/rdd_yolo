@@ -1,9 +1,0 @@
-datasets/train/Czech/images/Czech_000244.jpg
-datasets/train/Czech/images/Czech_001748.jpg
-datasets/train/Czech/images/Czech_000293.jpg
-datasets/train/Japan/images/Japan_002642.jpg
-datasets/train/Japan/images/Japan_006430.jpg
-datasets/train/Japan/images/Japan_009717.jpg
-datasets/train/India/images/India_008108.jpg
-datasets/train/India/images/India_002419.jpg
-datasets/train/India/images/India_009216.jpg
