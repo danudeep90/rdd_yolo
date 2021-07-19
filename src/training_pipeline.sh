@@ -77,12 +77,23 @@ echo "Latest weights are available at $PWD/$latest_weights_path " | tee -a $LOGF
 echo "Latest test results are saved at $PWD/$latest_test_dir" | tee -a $LOGFILEPATH
 echo
 
+
 # Check if all codes are successfully executed and then write to bucket
 
 # Write to gcs bucket
 echo ------------- Writing to gcs bucket ------------
 
+# Getting the full paths of results directory
+train_results_full_path="$PWD/$latest_train_dir"
+test_results_full_path="$PWD/$latest_test_dir"
 
+# Navigating to root folder
+cd ..
+
+# Executing script to push to GCS
+python src/export_results_gcs.py --train_results_path "$train_results_full_path" --test_results_path "$test_results_full_path" --gcs_uri "rdd_yolov5/training" --logfile_path "$LOGFILEPATH" | tee -a $LOGFILEPATH
 echo
+
+# Final Log message
 echo "Log is written to $LOGFILEPATH" | tee -a $LOGFILEPATH
 echo
