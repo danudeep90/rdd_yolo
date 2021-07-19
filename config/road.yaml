@@ -2,4 +2,5 @@ train: ../datasets/train.txt
 val: ../datasets/valid.txt
 test: ../datasets/test.txt
 nc: 4
-names: ['D00','D10','D20','D40']
+names: ['Longitudinal Crack','Lateral Crack','Alligator Crack','Pothole']
+# names: ['D00','D10','D20','D40']
