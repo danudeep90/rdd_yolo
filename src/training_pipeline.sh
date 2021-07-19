@@ -48,7 +48,7 @@ python ../src/get_latest_run_info.py | tee -a $LOGFILEPATH
 latest_train_results_status=$?
 
 # Reading variables from the text file
-while read -r line; do declare  "$line"; done <scripts/run_info_details.txt
+while read -r line; do declare  "$line"; done <../src/run_info_details.txt
 echo 
 
 echo ------------- Measuring performance on test dataset ------------
@@ -61,7 +61,7 @@ python ../src/get_latest_run_info.py --results_dir runs/test/ --tag test | tee -
 latest_test_results_status=$?
 
 # Reading variables from the text file
-while read -r line; do declare  "$line"; done <scripts/run_info_details.txt
+while read -r line; do declare  "$line"; done <../src/run_info_details.txt
 echo
 
 echo ------------- Exporting model to torchscript.ptl lite format ------------
