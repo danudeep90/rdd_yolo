@@ -2,8 +2,8 @@ echo
 echo ----------------- Running Training Pipeline ---------------------
 echo "Creating log file for the run"
 
-# Extract datetime in required format
-NOW=$(date +"%d-%b-%Y-%H-%M-%S")
+# Extract datetime in required format and india timezone
+NOW=$(TZ=Asia/Kolkata date +"%d_%b_%Y-%H_%M_%S")
 
 # Create Logs directory if it doesn't exist
 mkdir -p logs/
@@ -71,6 +71,7 @@ model_export_script_status=$?
 echo
 
 # Print training and test results location
+echo
 echo "Latest training results are saved at $PWD/$latest_train_dir" | tee -a $LOGFILEPATH
 echo "Latest weights are available at $PWD/$latest_weights_path " | tee -a $LOGFILEPATH
 echo "Latest test results are saved at $PWD/$latest_test_dir" | tee -a $LOGFILEPATH
@@ -81,5 +82,7 @@ echo
 # Write to gcs bucket
 echo ------------- Writing to gcs bucket ------------
 
+
 echo
 echo "Log is written to $LOGFILEPATH" | tee -a $LOGFILEPATH
+echo
