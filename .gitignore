@@ -4,6 +4,8 @@ yolov5/datasets/train/India
 yolov5/datasets/train/Japan
 yolov5/datasets/train.tar.gz
 
+datasets/train
+
 # Excluding virtual environment
 venv
 
@@ -28,11 +30,17 @@ yolov3-tiny.conv.15
 
 # Other meta info file
 yolov5/scripts/run_info_details.txt
+src/run_info_details.txt
 
 # Removing cache files
 yolov5/datasets/train.cache
 yolov5/datasets/valid.cache
 yolov5/datasets/test.cache
 
+datasets/train.cache
+datasets/valid.cache
+datasets/test.cache
+
+
 # Removing logs folder
-yolov5/logs
+logs
