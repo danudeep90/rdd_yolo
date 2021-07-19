@@ -1,6 +1,8 @@
 echo
 echo ----------------- Running Training Pipeline ---------------------
-# Create log file 
+echo "Creating log file for the run"
+
+# Extract datetime in required format
 NOW=$(date +"%d-%b-%Y-%H-%M-%S")
 
 # Create Logs directory if it doesn't exist
