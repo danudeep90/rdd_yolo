@@ -41,6 +41,10 @@ datasets/train.cache
 datasets/valid.cache
 datasets/test.cache
 
-
 # Removing logs folder
 logs
+
+# Adding .txt files
+datasets/train.txt
+datasets/valid.txt
+datasets/test.txt
