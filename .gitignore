@@ -38,3 +38,6 @@ logs
 datasets/train.txt
 datasets/valid.txt
 datasets/test.txt
+
+# Ignoring secured credential details
+secured_conf
