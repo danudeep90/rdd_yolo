@@ -3,6 +3,7 @@ echo "Current working directory is $PWD"
 echo
 
 # Create a directory if it doesn't exist
+echo "Creating directory named 'datasets' if it doesn't exist"
 mkdir -p datasets/
 
 # Change directory
@@ -12,10 +13,8 @@ cd datasets
 rm -r train
 
 # Changed directory to datasets
-echo Changed working directory to datasets to download training images
-echo ---------
-pwd
-echo ---------
+echo "Changed working directory to $PWD"
+echo
 
 # Download the training data
 echo downloading training data.....
@@ -34,3 +33,4 @@ rm train.tar.gz
 
 # Change working directory
 cd ..
+echo "Changed working directory back to $PWD"
