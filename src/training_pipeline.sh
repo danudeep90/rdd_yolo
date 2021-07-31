@@ -39,7 +39,7 @@ cd yolov5
 echo "Changed working directory to yolov5 folder $PWD"
 
 # Execute training code
-python train.py --batch 16 --epochs 1 --data ../config/road.yaml --weights yolov5s.pt | tee -a $LOGFILEPATH
+python train.py --batch 16 --epochs 1 --data ../config/road.yaml --weights yolov5s.pt --device 0 | tee -a $LOGFILEPATH
 train_script_status=$?
 echo
 
@@ -53,7 +53,7 @@ echo
 
 echo ------------- Measuring performance on test dataset ------------
 # Running on test dataset
-python test.py --weights $latest_weights_path --data ../config/road.yaml --task test | tee -a $LOGFILEPATH
+python test.py --weights $latest_weights_path --data ../config/road.yaml --task test --device 0 | tee -a $LOGFILEPATH
 test_perf_script_status=$?
 
 # Get info of latest test folders
@@ -66,7 +66,7 @@ echo
 
 echo ------------- Exporting model to torchscript.ptl lite format ------------
 # Export model to torchscript.ptl in lite format 
-python models/export.py --weights $latest_weights_path | tee -a $LOGFILEPATH
+python models/export.py --weights $latest_weights_path --device 0 | tee -a $LOGFILEPATH
 model_export_script_status=$?
 echo
 
