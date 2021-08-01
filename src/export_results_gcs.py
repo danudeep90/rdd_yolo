@@ -110,6 +110,13 @@ def main(train_results_path, test_results_path, logfile_path, gcs_uri, storage_c
     # Upload log file to the bucket
     upload_file_to_bucket(storage_client, gcs_uri, out_folder_name, logfile_path)
 
+    # Uploading image meta datafiles
+    lst_meta_files = ["datasets/train.txt", "datasets/valid.txt", "datasets/test.txt"]
+    lst_meta_files_fullpath =[os.path.join(os.getcwd(),item) for item in lst_meta_files]
+
+    for meta_file_path in lst_meta_files_fullpath:
+        upload_file_to_bucket(storage_client, gcs_uri, out_folder_name, meta_file_path)
+
 
 if __name__ == "__main__":
 

@@ -39,7 +39,7 @@ cd yolov5
 echo "Changed working directory to yolov5 folder $PWD"
 
 # Execute training code
-python train.py --batch 16 --epochs 1 --data ../config/road.yaml --weights yolov5s.pt --device 0 | tee -a $LOGFILEPATH
+python train.py --batch 32 --epochs 1 --data ../config/road.yaml --weights yolov5s.pt --device 0 | tee -a $LOGFILEPATH
 train_script_status=$?
 echo
 
