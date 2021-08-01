@@ -41,3 +41,6 @@ datasets/test.txt
 
 # Ignoring secured credential details
 secured_conf
+
+# Ignoring nohup.out
+nohup.out
